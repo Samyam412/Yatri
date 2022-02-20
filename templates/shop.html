@@ -1,10 +1,16 @@
 {% extends 'basic.html' %}
 {% load static %}
 
+{% block title%} 
+Shop{% endblock %}
+
 {% block body %}
 
 <div class="Indexcontainer">
+    <div class="pageTitle">
 
+        <h3>Shop</h3>
+    </div>
   <ul class="listing">
     {% for product in productList %}
       <li class="product">
@@ -19,40 +25,11 @@
         
         <div class="actions-wrapper">
           <a href="#" class="add-btn wishlist">Wishlist</a>
-          <a href="#" class="add-btn cart">Cart</a>
+          <a href="#" data-product="{{product.id}}" data-action="add" class="add-btn cart addCart">Cart</a>
         </div>
       </li>
     {% endfor %}
   </div>
       
 
- {% endblock %}
- 
-{% block js %}
-<script>
-
-    if(localStorage.getItem('cart') == null){
-    var cart = {};
-    }
-    else{
-    cart= JSON.parse(localStorage.getItem('cart'));
-
-    }
-
-    $('.cart').click(function(){
-
-    var idstr = this.id.toString();
-
-    if (cart[idstr] != undefined){
-    cart[idstr]= cart[idstr]+1;
-    }
-    else{
-    cart[idstr]= 1;
-    }
-
-    localStorage.setItem('cart', JSON.stringify(cart));
-    });
-
-
-</script>
  {% endblock %}
