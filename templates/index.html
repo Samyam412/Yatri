@@ -1,0 +1,108 @@
+{% extends 'basic.html' %}
+{% load static %}
+
+{% block body %}
+
+<div class="Indexcontainer">
+
+  <ul class="listing">
+    {% for product in productList %}
+      <li class="product">
+        <a class="img-wrapper" href="#">
+          <img src="{{product.image.url}}" >
+        </a>
+        
+        <div class="info">
+          <div class="title">{{product.name}}</div>
+          <div class="price">Rs {{product.price}}</div>
+        </div>
+        
+        <div class="actions-wrapper">
+          <a href="#" class="add-btn wishlist">Wishlist</a>
+          <a href="#" class="add-btn cart">Cart</a>
+        </div>
+      </li>
+    {% endfor %}
+
+  </ul>
+  <div class="freshSale">
+    <h3>Fresh on Yatri</h3>
+    <ul class="listing">
+      {% for sale in freshsale %}
+        <li class="product">
+          <a class="img-wrapper" href="#">
+            <img src="{{sale.product.image.url}}" >
+          </a>
+          
+          <div class="info">
+            <div class="title">{{sale.product.name}}</div>
+            <div class="price">Rs {{sale.product.price}}</div>
+          </div>
+          
+          <div class="actions-wrapper">
+            <a href="#" class="add-btn wishlist">Wishlist</a>
+            <a href="#" class="add-btn cart">Cart</a>
+          </div>
+        </li>
+      {% endfor %}
+  
+    </ul>
+
+  </div>
+
+  <div class="freshSale">
+    <h3>Discount Offer on Yatri</h3>
+    <ul class="listing">
+      {% for sale in freshsale %}
+        <li class="product">
+          <a class="img-wrapper" href="#">
+            <img src="{{sale.product.image.url}}" >
+          </a>
+          
+          <div class="info">
+            <div class="title">{{sale.product.name}}</div>
+            <div class="price">Rs {{sale.product.price}}</div>
+          </div>
+          
+          <div class="actions-wrapper">
+            <a href="#" class="add-btn wishlist">Wishlist</a>
+            <a href="#" class="add-btn cart">Cart</a>
+          </div>
+        </li>
+      {% endfor %}
+  
+    </ul>
+
+  </div>
+      
+
+ {% endblock %}
+ 
+{% block js %}
+<script>
+
+    if(localStorage.getItem('cart') == null){
+    var cart = {};
+    }
+    else{
+    cart= JSON.parse(localStorage.getItem('cart'));
+
+    }
+
+    $('.cart').click(function(){
+
+    var idstr = this.id.toString();
+
+    if (cart[idstr] != undefined){
+    cart[idstr]= cart[idstr]+1;
+    }
+    else{
+    cart[idstr]= 1;
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    });
+
+
+</script>
+ {% endblock %}
