@@ -4,3 +4,4 @@ from product.models import *
 admin.site.register(ProductCategory)
 admin.site.register(Products)
 admin.site.register(freshSale)
+admin.site.register(Popualar)

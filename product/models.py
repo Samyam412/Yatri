@@ -1,9 +1,6 @@
 from django.db import models
 
 # Create your models here.
-from email.policy import default
-from itertools import product
-from django.conf import settings
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -27,6 +24,12 @@ class Products(models.Model):
         return f'{self.name}'
 
 class freshSale(models.Model):
+    product = models.ForeignKey(Products, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f'{self.product}'
+
+class Popualar(models.Model):
     product = models.ForeignKey(Products, on_delete=models.CASCADE)
 
     def __str__(self):

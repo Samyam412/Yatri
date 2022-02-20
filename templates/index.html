@@ -5,13 +5,30 @@
 {% block body %}
 
 <div class="Indexcontainer">
+    <!-- carousel -->
+    <div class="carousel-wrapper">
+      <span id="item-1"></span>
+      <div class="carousel-item item-1">
+        <h2>Item 1</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus   accumsan pretium dolor vel convallis. Aliquam erat volutpat. Maecenas lacus nunc, imperdiet sed mi et, finibus suscipit mi.</p>
+        <a class="arrow arrow-prev" href="#item-3"></a>
+        <a class="arrow arrow-next" href="#item-2"></a>
+      </div>
+  
+    </div>
+      
+    
+
+
+
+
 
   <div class="freshSale">
-    <h3>Fresh on Yatri</h3>
+    <h3>Fresh Products </h3>
     <ul class="listing">
       {% for sale in freshsale %}
         <li class="product">
-          <a class="img-wrapper" href="#">
+          <a class="img-wrapper" href="{% url 'productview' sale.id %}">
             <img src="{{sale.product.image.url}}" >
           </a>
           
@@ -21,7 +38,6 @@
           </div>
           
           <div class="actions-wrapper">
-            <a href="#" class="add-btn wishlist">Wishlist</a>
             <a href="#" data-product="{{sale.product.id}}" data-action="add" class="add-btn cart addCart">Cart</a>
           </div>
         </li>
@@ -32,22 +48,21 @@
   </div>
 
   <div class="freshSale">
-    <h3>Discount Offer on Yatri</h3>
+    <h3>Most Popular</h3>
     <ul class="listing">
-      {% for sale in freshsale %}
+      {% for item in popular %}
         <li class="product">
-          <a class="img-wrapper" href="#">
-            <img src="{{sale.product.image.url}}" >
+          <a class="img-wrapper" href="{% url 'productview' item.id %}">
+            <img src="{{item.product.image.url}}" >
           </a>
           
           <div class="info">
-            <div class="title">{{sale.product.name}}</div>
-            <div class="price">Rs {{sale.product.price}}</div>
+            <div class="title">{{item.product.name}}</div>
+            <div class="price">Rs {{item.product.price}}</div>
           </div>
           
           <div class="actions-wrapper">
-            <a href="#" class="add-btn wishlist">Wishlist</a>
-            <a href="#" class="add-btn cart addCart">Cart</a>
+            <a href="#" data-product="{{product.id}}" data-action="add" class="add-btn cart addCart">Cart</a>
           </div>
         </li>
       {% endfor %}

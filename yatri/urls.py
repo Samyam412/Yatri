@@ -28,6 +28,8 @@ urlpatterns = [
     path('product',include('product.urls')),
     path('product',include('product.urls')),
     path('about',include('about.urls')),
+    path('contact',include('contact.urls')),
+    path('login',include('login.urls')),
     path('update_cart/', cartView.updateCart,name="update_cart"),
 
 
