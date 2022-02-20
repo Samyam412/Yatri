@@ -14,7 +14,7 @@ Shop{% endblock %}
   <ul class="listing">
     {% for product in productList %}
       <li class="product">
-        <a class="img-wrapper" href="#">
+        <a class="img-wrapper" href="{% url 'productview' product.id %}">
           <img src="{{product.image.url}}" >
         </a>
         

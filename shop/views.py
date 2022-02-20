@@ -10,3 +10,5 @@ def displayshop(request):
         'productList':productList,
     }
     return render(request,'shop.html',context)
+
+

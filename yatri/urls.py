@@ -25,6 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('home.urls')),
     path('shop',include('shop.urls')),
+    path('product',include('product.urls')),
     path('update_cart/', cartView.updateCart,name="update_cart"),
 
 
