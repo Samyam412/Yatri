@@ -15,7 +15,8 @@
     <title>{% block title%} {% endblock %}</title>
 
   </head>
-  <body>
+  <body class="main-body">
+<!-- 
 
     <div class="mynav">
 
@@ -33,20 +34,10 @@
       <li class="nav-item">
         <a class="nav-link" href="{% url 'displayshop' %}">Shop</a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        <a class="nav-link" href="{% url 'about' %}">About</a>
       </li>
+    
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -54,8 +45,38 @@
     </form>
   </div>
 </nav>
-    </div>
-  {% block body %} {% endblock %}
+    </div> -->
+  
+    <header class="header">
+      <nav class="navbar">
+          <a href="{% url 'index' %}" class="nav-logo" ><img src="{% static 'yatri-logo.png'%}" alt=""></a>
+          <ul class="nav-menu">
+              <li class="nav-item">
+                  <a href="{% url 'displayshop' %}" class="nav-link">Shop</a>
+              </li>
+              <li class="nav-item">
+                  <a href="{% url 'about' %}" class="nav-link">About</a>
+              </li>
+              <li class="nav-item">
+                  <a href="#" class="nav-link">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Cart</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Login</a>
+              </li>
+          </ul>
+          <div class="navbarMini">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+          </div>
+      </nav>
+    </header>
+
+
+    {% block body %} {% endblock %}
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -63,6 +84,28 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     <script type="text/javascript" src="{% static 'js/cart.js' %}"></script>
+    <script>
+      const navbarMini = document.querySelector(".navbarMini");
+      const navMenu = document.querySelector(".nav-menu");
+
+      navbarMini.addEventListener("click", mobileMenu);
+
+      function mobileMenu() {
+      navbarMini.classList.toggle("active");
+      navMenu.classList.toggle("active");
+
+      const navLink = document.querySelectorAll(".nav-link");
+
+      navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+      function closeMenu() {
+        navbarMini.classList.remove("active");
+        navMenu.classList.remove("active");
+      }
+    }
+    </script>
+    
+    
     <script>
 
       function getToken(name) {
@@ -82,6 +125,7 @@
         }
         const csrftoken = getToken('csrftoken');
     </script>
+    
     {% block js %} {% endblock %}
   </body>
 </html>
