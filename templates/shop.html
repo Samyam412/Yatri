@@ -9,7 +9,7 @@ Shop{% endblock %}
 <div class="Indexcontainer">
     <div class="pageTitle">
 
-        <h3>Shop</h3>
+        <h1 >All products</h1>
     </div>
   <ul class="listing">
     {% for product in productList %}
@@ -24,7 +24,7 @@ Shop{% endblock %}
         </div>
         
         <div class="actions-wrapper">
-          <a href="#" data-product="{{product.id}}" data-action="add" class="add-btn cart addCart">Cart</a>
+          <a href="#" data-product="{{product.id}}" data-action="add" class="add-btn cart addCart">cart</a>
         </div>
       </li>
     {% endfor %}

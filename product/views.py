@@ -4,7 +4,7 @@ from product.models import Products
 
 # Create your views here.
 def productview(request,p_id):
-    productList = Products.objects.all()
+    productList = Products.objects.get(id= p_id)
 
     context={
         'productList':productList,

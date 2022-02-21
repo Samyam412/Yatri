@@ -1,10 +1,16 @@
 {% extends 'basic.html' %}
+{% load static %}
 
 {% block title%}Login{% endblock %}
 {% block body %}
 
 <div class="login-container">
 	<div class="screen">
+
+		<div class="login-logo">
+			<img src="{% static 'yatri-logo.png'%}" alt="">
+
+		</div>
 		<div class="screen__content">
 			<form class="login">
 				<div class="login__field">
