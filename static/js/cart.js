@@ -6,7 +6,6 @@ for(let i=0; i < addToCart.length; i++){
         let action = this.dataset.action
         let qty = this.dataset.qty
 
-
  
     let url = '/update_cart/'
 
@@ -33,3 +32,5 @@ for(let i=0; i < addToCart.length; i++){
     })
 
 }
+
+

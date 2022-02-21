@@ -35,3 +35,17 @@ def updateCart(request):
     # return redirect ('index')
 
     return JsonResponse('HREER', safe=False)
+
+def cart(request):
+    
+
+    user_data= request.user
+    order, created = Order.objects.get_or_create(userData= user_data, complete=False)
+    items = order.orderedproducts_set.all()
+    data={
+        'items':items,
+        'order':order,
+
+    }
+    return render(request,'cart.html',data)
+

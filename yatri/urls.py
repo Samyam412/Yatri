@@ -29,6 +29,9 @@ urlpatterns = [
     path('about',include('about.urls')),
     path('contact',include('contact.urls')),
     path('login',include('login.urls')),
+    path('cart',include('cart.urls')),
+    path('register/',include('register.urls')),
+    path('checkout/',include('checkout.urls')),
     path('update_cart/', cartView.updateCart,name="update_cart"),
 
 

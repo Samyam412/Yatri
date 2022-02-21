@@ -23,9 +23,16 @@ Shop{% endblock %}
           <div class="price">Rs {{product.price}}</div>
         </div>
         
+        {% if user.is_authenticated %}
         <div class="actions-wrapper">
           <a href="#" data-product="{{product.id}}" data-action="add" class="add-btn cart addCart">cart</a>
         </div>
+        {% else %}
+        <div class="actions-wrapper">
+          <a href="{% url 'login' %}" class="add-btn cart">cart</a>
+        </div>
+
+        {% endif %}
       </li>
     {% endfor %}
   </div>
