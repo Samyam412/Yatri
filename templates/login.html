@@ -1,0 +1,39 @@
+{% extends 'basic.html' %}
+{% load static %}
+
+{% block title%}Login{% endblock %}
+{% block body %}
+
+<div class="login-container">
+	<div class="screen">
+
+		<div class="login-logo">
+			<img src="{% static 'yatri-logo.png'%}" alt="">
+
+		</div>
+		<div class="screen__content">
+			<form class="login" method="POST">
+				{% csrf_token %}
+				<div class="login__field">
+					<i class="login__icon fas fa-user"></i>
+					<input type="text" class="login__input" name='username' placeholder=" Enter your Username">
+				</div>
+				<div class="login__field">
+					<i class="login__icon fas fa-lock"></i>
+					<input type="password" class="login__input" name='password' placeholder=" Enter your Password">
+				</div>
+
+				<button class="button login__submit" type="submit">
+					<div class="button__text">Log In</div>
+					<i class="button__icon fas fa-chevron-right"></i>
+				</button>
+				<button class="button login__submit" >
+					<a href="{% url 'register' %}">Signup</a>
+					<i class="button__icon fas fa-chevron-right"></i>
+				</button>
+				
+			</form>
+		</div>
+	</div>
+
+	{% endblock %}

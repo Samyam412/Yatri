@@ -1,0 +1,34 @@
+{% extends 'basic.html' %}
+{% load static %}
+
+{% block title%}Yatri Product{% endblock %}
+{% block body %}
+
+<div class="productcard">
+    <nav class="prodnav"> 
+      <svg class="arrow" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <polygon points="352,115.4 331.3,96 160,256 331.3,416 352,396.7 201.5,256 " stroke="#727272" />
+      </svg>
+      <a href="/">Back to home</a>
+    </nav>
+    <div class="prodphoto">
+  
+
+
+      <img src="{{productList.image.url}}">
+
+
+    </div>
+    <div class="description">
+      <h2>{{productList.name}}</h2>
+      <h4>{{productList.price}}</h4>
+      <p>{{productList.description}}</p>
+      <button class="cartBtn">
+        <a href="#" data-product="{{product.id}}" data-action="add" class="add-btn cart addCart">add to cart</a>
+      </button>
+      
+      
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'basic.html' %}
+{% load static %}
+
+{% block title%} 
+Shop{% endblock %}
+
+{% block body %}
+
+<div class="Indexcontainer">
+    <div class="pageTitle">
+
+        <h1 >All products</h1>
+    </div>
+  <ul class="listing">
+    {% for product in productList %}
+      <li class="product">
+        <a class="img-wrapper" href="{% url 'productview' product.id %}">
+          <img src="{{product.image.url}}" >
+        </a>
+        
+        <div class="info">
+          <div class="title">{{product.name}}</div>
+          <div class="price">Rs {{product.price}}</div>
+        </div>
+        
+        {% if user.is_authenticated %}
+        <div class="actions-wrapper">
+          <a href="#" data-product="{{product.id}}" data-action="add" class="add-btn cart addCart">cart</a>
+        </div>
+        {% else %}
+        <div class="actions-wrapper">
+          <a href="{% url 'login' %}" class="add-btn cart">cart</a>
+        </div>
+
+        {% endif %}
+      </li>
+    {% endfor %}
+  </div>
+      
+
+ {% endblock %}

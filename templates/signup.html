@@ -1,0 +1,45 @@
+{% extends 'basic.html' %}
+{% load static %}
+
+{% block title%}signup{% endblock %}
+{% block body %}
+
+<div class="signup-container">
+	<div class="screen">
+
+		<div class="signup-logo">
+			<img src="{% static 'yatri-logo.png'%}" alt="">
+
+		</div>
+		<div class="screen__content">
+			<form class="signup" method="POST" >
+				{% csrf_token %}
+				<div class="signup__field">
+					<h3>Username</h3>
+					<i class="signup__icon fas fa-user"></i>
+					{{form.username}}
+				</div>
+				<div class="signup__field">
+					<h3>Email</h3>
+					<i class="signup__icon fas fa-lock"></i>
+					{{form.email}}
+				</div>
+                <div class="signup__field">
+					<h3>Password</h3>
+					<i class="signup__icon fas fa-lock"></i>
+					{{form.password1}}
+				</div>
+                <div class="signup__field">
+					<h3>Confirm password</h3>
+					<i class="signup__icon fas fa-lock"></i>
+					{{form.password2}}
+				</div>
+				<button class="button signup__submit" type="submit">
+					<div class="button__text" >Submit</div>
+					<i class="button__icon fas fa-chevron-right"></i>
+				</button>
+			</form>
+		</div>
+	</div>
+
+	{% endblock %}

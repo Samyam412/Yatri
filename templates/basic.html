@@ -1,0 +1,114 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+    <title>{% block title%} {% endblock %}</title>
+
+  </head>
+  <body class="main-body">
+  
+    <header class="header">
+      <nav class="navbar">
+          <a href="{% url 'index' %}" class="nav-logo" ><img src="{% static 'yatri-logo.png'%}" alt=""></a>
+          <ul class="nav-menu">
+              <li class="nav-item">
+                  <a href="{% url 'displayshop' %}" class="nav-link">Shop</a>
+              </li>
+              <li class="nav-item">
+                  <a href="{% url 'about' %}" class="nav-link">About</a>
+              </li>
+              <li class="nav-item">
+                  <a href="{% url 'contact' %}" class="nav-link">Contact</a>
+              </li>
+              {% if user.is_authenticated %}
+              <li class="nav-item">
+                <a href="{% url 'cart' %}" class="nav-link">Cart</a>
+              </li>
+              
+              <li class="nav-item">
+                <a href="" class="nav-link">{{user.username}}</a>
+              </li>
+              <li class="nav-item">
+                <a href="{% url 'signout' %}" class="nav-link">logout</a>
+              </li>
+
+
+              {% else %}
+              
+              <li class="nav-item">
+                <a href="{% url 'login' %}" class="nav-link">Login</a>
+              </li>
+              {% endif %}
+          </ul>
+          <div class="navbarMini">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+          </div>
+      </nav>
+    </header>
+
+
+    {% block body %} {% endblock %}
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script type="text/javascript" src="{% static 'js/cart.js' %}"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script>
+      const navbarMini = document.querySelector(".navbarMini");
+      const navMenu = document.querySelector(".nav-menu");
+
+      navbarMini.addEventListener("click", mobileMenu);
+
+      function mobileMenu() {
+      navbarMini.classList.toggle("active");
+      navMenu.classList.toggle("active");
+
+      const navLink = document.querySelectorAll(".nav-link");
+
+      navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+      function closeMenu() {
+        navbarMini.classList.remove("active");
+        navMenu.classList.remove("active");
+      }
+    }
+    </script>
+    
+    
+    <script>
+
+      function getToken(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+        }
+        const csrftoken = getToken('csrftoken');
+    </script>
+    
+    {% block js %} {% endblock %}
+  </body>
+</html>
