@@ -10,6 +10,7 @@
   box-sizing: border-box;
 }
 
+
 html {
   font-size: 62.5%;
   font-family: 'Roboto', sans-serif;
@@ -25,11 +26,11 @@ a {
 }
 
 .header {
-  border-bottom: 1px solid #E2E8F0;
+  border-bottom: .1rem solid #E2E8F0;
 }
 
 .navbar {
-  max-height: 53px;
+  max-height: 5.3rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,15 +43,15 @@ a {
 }
 
 .nav-logo img {
-  height: 45x;
-  width: 45px;
+  height: 4.5rem;
+  width: 4.5rem;
 }
 
 .bar {
   display: block;
-  width: 25px;
-  height: 3px;
-  margin: 5px auto;
+  width: 2.5rem;
+  height: .3rem;
+  margin: .5rem auto;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   background-color: #101010;
@@ -82,58 +83,29 @@ a {
   color: #482ff7;
 }
 
-@media only screen and (max-width: 768px) {
-  .nav-menu {
-    position: fixed;
-    left: -100%;
-    top: 5rem;
-    flex-direction: column;
-    background-color: #fff;
-    width: 100%;
-    border-radius: 10px;
-    text-align: center;
-    transition: 0.3s;
-    box-shadow:
-      0 10px 27px rgba(0, 0, 0, 0.05);
-  }
-
-  .nav-menu.active {
-    left: 0;
-  }
-
-  .nav-item {
-    margin: 2.5rem 0;
-  }
-
-  .navbarMini {
-    display: block;
-    cursor: pointer;
-  }
-
-}
 
 
 .cartBtn {
   background-color: #ffcb59c7;
-  border-radius: 100px;
-  box-shadow: rgba(187, 165, 44, 0.2) 0 -25px 18px -14px inset, rgba(165, 187, 44, 0.15) 0 1px 2px, rgba(187, 173, 44, 0.15) 0 2px 4px, rgba(187, 173, 44, 0.15) 0 4px 8px, rgba(44, 187, 99, .15) 0 8px 16px, rgba(187, 185, 44, 0.15) 0 16px 32px;
+  border-radius: 100rem;
+  box-shadow: rgba(187, 165, 44, 0.2) 0 -2.5rem 1.8rem -1.4rem inset, rgba(165, 187, 44, 0.15) 0 .1rem .2rem, rgba(187, 173, 44, 0.15) 0 .2rem .4rem, rgba(187, 173, 44, 0.15) 0 .4rem .8rem, rgba(44, 187, 99, .15) 0 .8rem 1.6rem, rgba(187, 185, 44, 0.15) 0 1.6rem 3.2rem;
   color: rgb(128, 94, 0);
   cursor: pointer;
   display: inline-block;
   font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
-  padding: 7px 20px;
+  padding: .7rem 2.0rem;
   text-align: center;
   text-decoration: none;
   transition: all 250ms;
   border: 0;
-  font-size: 16px;
+  font-size: 1.6rem;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
 }
 
 .cartBtn:hover {
-  box-shadow: rgba(187, 165, 44, 0.2) 0 -25px 18px -14px inset, rgba(165, 187, 44, 0.15) 0 1px 2px, rgba(187, 173, 44, 0.15) 0 2px 4px, rgba(187, 173, 44, 0.15) 0 4px 8px, rgba(44, 187, 99, .15) 0 8px 16px, rgba(187, 185, 44, 0.15) 0 16px 32px;
+  box-shadow: rgba(187, 165, 44, 0.2) 0 -2.5rem 1.8rem -1.4rem inset, rgba(165, 187, 44, 0.15) 0 .1rem .2rem, rgba(187, 173, 44, 0.15) 0 .2rem .4rem, rgba(187, 173, 44, 0.15) 0 .4rem .8rem, rgba(44, 187, 99, .15) 0 .8rem 1.6rem, rgba(187, 185, 44, 0.15) 0 1.6rem 3.2rem;
   transform: scale(1.05) rotate(-1deg);
 }
 
@@ -153,10 +125,6 @@ a {
   height: 80vh;
 }
 
-.d-block img {
-  /* height: 1024px; */
-}
-
 .carousel-item img {
   align-items: bottom;
 }
@@ -164,7 +132,7 @@ a {
 /* contact */
 
 .Contact-container {
-  margin: 20px;
+  margin: 2.0rem;
 }
 
 /* ------login css------ */
@@ -180,22 +148,22 @@ a {
 .login-logo {
   display: flex;
   justify-content: center;
-  height: 100px;
+  height: 10.0rem;
   width: 100%;
-  margin-top: 80px;
+  margin-top: 8.0rem;
 }
 
 .login-logo img {
-  height: 100px;
-  width: 100px;
+  height: 10.0rem;
+  width: 10.0rem;
 }
 
 .screen {
   background: linear-gradient(90deg, #1a1920, #31302f);
   position: relative;
-  height: 600px;
-  width: 360px;
-  box-shadow: 0px 0px 24px #968256;
+  height: 60.0rem;
+  width: 36rem;
+  box-shadow: 0rem 0rem 2.4rem #968256;
 }
 
 .screen__content {
@@ -209,9 +177,9 @@ a {
 }
 
 .login {
-  width: 320px;
+  width: 32rem;
   padding: auto;
-  padding-top: -28px;
+  padding-top: -2.8rem;
   text-align: center !important;
   display: flex;
   flex-direction: column;
@@ -222,23 +190,23 @@ a {
 }
 
 .login__field {
-  padding: 20px 0px;
+  padding: 2rem 0rem;
   position: relative;
 }
 
 .login__icon {
   position: absolute;
-  top: 30px;
+  top: 3rem;
   color: #7875B5;
 }
 
 .login__input {
   FONT-VARIANT: JIS04;
   border: none;
-  border-bottom: 2px solid #D1D1D4;
+  border-bottom: .2rem solid #D1D1D4;
   background: none;
-  padding: 10px;
-  padding-left: 24px;
+  padding: 1rem;
+  padding-left: 2.4rem;
   font-weight: 700;
   width: 100%;
   transition: .2s;
@@ -253,18 +221,18 @@ a {
 
 .login__submit {
   background: #fff;
-  font-size: 14px;
-  margin-top: 30px;
-  padding: 16px 20px;
-  border-radius: 26px;
-  border: 1px solid #D4D3E8;
+  font-size: 1.4rem;
+  margin-top: 3.0rem;
+  padding: 1.6rem 2.0rem;
+  border-radius: 2.6rem;
+  border: .1rem solid #D4D3E8;
   text-transform: uppercase;
   font-weight: 700;
   display: flex;
   align-items: center;
   width: 100%;
   color: #eecda2;
-  box-shadow: 0px 2px 2px #6e5a40;
+  box-shadow: 0rem .2rem .2rem #6e5a40;
   cursor: pointer;
   transition: .2s;
   justify-content: center;
@@ -304,22 +272,22 @@ a {
 .signup-logo {
   display: flex;
   justify-content: center;
-  height: 100px;
+  height: 10.0rem;
   width: 100%;
-  margin-top: 80px;
+  margin-top: 8.0rem;
 }
 
 .signup-logo img {
-  height: 100px;
-  width: 100px;
+  height: 10.0rem;
+  width: 10.0rem;
 }
 
 .screen {
   background: linear-gradient(90deg, #1a1920, #31302f);
   position: relative;
-  height: 600px;
-  width: 360px;
-  box-shadow: 0px 0px 24px #968256;
+  height: 60.0rem;
+  width: 36.0rem;
+  box-shadow: 0rem 0rem 2.4rem #968256;
 }
 
 .screen__content {
@@ -333,9 +301,9 @@ a {
 }
 
 .signup {
-  width: 320px;
+  width: 32.0rem;
   padding: auto;
-  padding-top: -28px;
+  padding-top: -2.8rem;
   text-align: center !important;
   display: flex;
   flex-direction: column;
@@ -357,25 +325,25 @@ a {
 }
 
 .signup__field {
-  padding: 10px 0px;
+  padding: 1.0rem 0rem;
   position: relative;
-  margin-top: 2px;
+  margin-top: .2rem;
 
 }
 
 .signup__icon {
   position: absolute;
-  top: 30px;
+  top: 3.0rem;
   color: #7875B5;
 }
 
 .signup__input {
   FONT-VARIANT: JIS04;
   border: none;
-  border-bottom: 2px solid #D1D1D4;
+  border-bottom: .2rem solid #D1D1D4;
   background: none;
-  padding: 10px;
-  padding-left: 24px;
+  padding: 1.0rem;
+  padding-left: 2.4rem;
   font-weight: 700;
   width: 100%;
   transition: .2s;
@@ -390,18 +358,18 @@ a {
 
 .signup__submit {
   background: #fff;
-  font-size: 14px;
-  margin-top: 30px;
-  padding: 16px 20px;
-  border-radius: 26px;
-  border: 1px solid #D4D3E8;
+  font-size: 1.4rem;
+  margin-top: 3.0rem;
+  padding: 1.6rem 2.0rem;
+  border-radius: 2.6rem;
+  border: .1rem solid #D4D3E8;
   text-transform: uppercase;
   font-weight: 700;
   display: flex;
   align-items: center;
   width: 100%;
   color: #eecda2;
-  box-shadow: 0px 2px 2px #6e5a40;
+  box-shadow: 0rem .2rem .2rem #6e5a40;
   cursor: pointer;
   transition: .2s;
   justify-content: center;
@@ -454,8 +422,8 @@ a {
   justify-content: space-evenly;
   /* transform: translateX(-50%); */
   width: 100%;
-  margin-bottom: 20px;
-  margin-top: 20px;
+  margin-bottom: 2.0rem;
+  margin-top: 2.0rem;
   /* background-color: blue; */
   flex-direction: row;
   align-content: flex-start;
@@ -464,7 +432,7 @@ a {
 }
 
 .product {
-  width: 240px;
+  width: 24.0rem;
   position: relative;
 }
 
@@ -474,18 +442,18 @@ a {
 
 .img-wrapper {
   display: block;
-  width: 240px;
-  height: 260px;
-  border: 1px solid #afafaf;
+  width: 24.0rem;
+  height: 26.0rem;
+  border: .1rem solid #afafaf;
   border-bottom: 0;
   overflow: hidden;
   text-align: center;
 }
 
 .img-wrapper img {
-  width: 236px;
-  height: 337px;
-  padding-bottom: 30px;
+  width: 23.6rem;
+  height: 33.7rem;
+  padding-bottom: 3.0rem;
 }
 
 .info {
@@ -493,16 +461,16 @@ a {
   background: #000;
   color: #fff;
   position: relative;
-  padding: 40px 10px 20px 10px;
+  padding: 4.0rem 1.0rem 2.0rem 1.0rem;
   text-align: center;
 
   vertical-align: middle;
   transform: translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  box-shadow: 0 0 .1rem rgba(0, 0, 0, 0);
   transition-property: color, height;
   transition-duration: 0.3s, 0.4s;
   transition-timing-function: ease-out;
-  height: 83px;
+  height: 8.3rem;
 }
 
 .info:before {
@@ -528,14 +496,14 @@ a {
   border-style: solid;
   transition-duration: 0.3s;
   transition-property: transform;
-  left: calc(50% - 11px);
+  left: calc(50% - 1.1rem);
   bottom: 0;
-  border-width: 10px 10px 0 10px;
+  border-width: 1.0rem 1.0rem 0 1.0rem;
   border-color: black transparent transparent transparent;
 }
 
 .product:hover .info {
-  height: 40px;
+  height: 4.0rem;
 }
 
 .product:hover .info:before {
@@ -544,7 +512,7 @@ a {
 
 .product:hover .info:after {
   visibility: visible;
-  transform: translateY(10px);
+  transform: translateY(1.0rem);
 }
 
 .title {
@@ -556,7 +524,7 @@ a {
 }
 
 .product:hover .title {
-  transform: translateY(-18px);
+  transform: translateY(-1.8rem);
   font-weight: bold;
   color: #000;
 }
@@ -565,9 +533,9 @@ a {
   background: #e32d2c;
   position: absolute;
   font-size: 1.3em;
-  padding: 4px 13px;
-  top: -15px;
-  right: 10px;
+  padding: .4rem 1.3rem;
+  top: -1.5rem;
+  right: 1.0rem;
 }
 
 .price.sale {
@@ -576,13 +544,13 @@ a {
 
 .price.old {
   font-size: 0.95em;
-  padding: 4px 6px;
+  padding: .4rem .6rem;
   text-decoration: line-through;
-  top: -43px;
+  top: -4.3rem;
 }
 
 .actions-wrapper {
-  margin-top: 14px;
+  margin-top: 1.4rem;
   display: flex;
   justify-content: space-around;
   visibility: hidden;
@@ -590,7 +558,7 @@ a {
 
 .actions-wrapper * {
   width: 50%;
-  padding: 2px 0;
+  padding: .2rem 0;
   text-align: center;
   color: #191919;
   font-size: 0.95em;
@@ -599,11 +567,11 @@ a {
 
 .actions-wrapper *:before {
   font-family: "FontAwesome";
-  margin-right: 8px;
+  margin-right: .8rem;
 }
 
 .wishlist {
-  border-right: 1px solid #afafaf;
+  border-right: .1rem solid #afafaf;
 }
 
 .wishlist:hover {
@@ -630,7 +598,7 @@ a {
   position: absolute;
   top: 0;
   left: 0;
-  padding: 4px 8px;
+  padding: .4rem .8rem;
   font-size: 0.9em;
 }
 
@@ -646,16 +614,16 @@ a {
 
 .freshSale {
   width: 100%;
-  height: 442px;
+  height: 44.2rem;
   background-color: #d8d0c359;
-  margin-bottom: 50px;
-  margin-top: 40px;
+  margin-bottom: 5.0rem;
+  margin-top: 4.0rem;
 }
 
 .heading {
   font-weight: bold;
-  margin: 20px;
-  font-size: 30px;
+  margin: 2.0rem;
+  font-size: 3.0rem;
   font-style: bold;
   font-family: ui-sans-serif;
   text-align: center;
@@ -674,26 +642,26 @@ a {
 }
 
 .about-container p {
-  margin: 40px;
+  margin: 4.0rem;
 }
 
 
 .productcard {
-  width: 650px;
-  height: 375px;
+  width: 65.0rem;
+  height: 37.5rem;
   position: absolute;
   background: white;
   margin: 0 auto;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
-    0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 .2rem .5rem 0 rgba(0, 0, 0, 0.16),
+    0 .2rem 1.0rem 0 rgba(0, 0, 0, 0.12);
   transition: all 0.3s;
 }
 
 .prodphoto {
-  padding: 30px;
+  padding: 3.0rem;
   width: 45%;
   text-align: center;
   float: left;
@@ -701,49 +669,49 @@ a {
 }
 
 .prodphoto img {
-  max-height: 240px;
+  max-height: 24.0rem;
 }
 
 .description {
-  padding: 30px;
+  padding: 3.0rem;
   float: left;
   width: 55%;
-  border-left: 2px solid #efefef;
+  border-left: .2rem solid #efefef;
 }
 
 .cartButton :hover {
   background: darken(white, 2%);
-  border: 1px solid #aedaa6;
+  border: .1rem solid #aedaa6;
   color: #aedaa6;
   cursor: pointer;
 }
 
 .arrow {
   float: left;
-  height: 15px;
-  width: 15px;
-  margin-right: 10px;
+  height: 1.5rem;
+  width: 1.5rem;
+  margin-right: 1.0rem;
 }
 
 .prodnav {
   width: 100%;
   color: #727272;
   text-transform: uppercase;
-  padding: 20px;
-  border-bottom: 2px solid #efefef;
-  font-size: 12px;
+  padding: 2.0rem;
+  border-bottom: .2rem solid #efefef;
+  font-size: 1.2rem;
 }
 
 .aboutCtn h1 {
-  margin-top: 18px;
-  margin-bottom: 18px;
-  margin-left: -5px;
+  margin-top: 1.8rem;
+  margin-bottom: 1.8rem;
+  margin-left: -.5rem;
   font: 7em sans-serif;
   font-style: bold;
 }
 
 .aboutCtn p {
-  margin-bottom: 18px;
+  margin-bottom: 1.8rem;
   font: 2em sans-serif;
 
 
@@ -759,8 +727,8 @@ a {
 }
 
 .pageTitle h1 {
-  margin: 20px;
-  font-size: 40px;
+  margin: 2.0rem;
+  font-size: 4.0rem;
   /* text-align: center; */
   font-style: bold;
   /* font-weight: 500; */
@@ -775,7 +743,7 @@ a {
   vertical-align: middle;
 }
 
-@media screen and (max-width: 600px) {
+@media all and  (max-width: 600px) {
   table#cart tbody td .form-control {
     width: 20%;
     display: inline !important;
@@ -801,7 +769,7 @@ a {
   table#cart tbody td {
     display: block;
     padding: .6rem;
-    min-width: 320px;
+    min-width: 32.0rem;
   }
 
   table#cart tbody tr td:first-child {
@@ -829,6 +797,49 @@ a {
 }
 
 .resizeImage {
-  width: 120px;
-  height: 120px;
+  width: 12.0rem;
+  height: 12.0rem;
+}
+
+@media all and (max-width: 998px) {
+  html{
+    font-size: 55%;
+  }
+  
+}
+
+@media all and (max-width: 768px) {
+  html{
+    font-size: 45%;
+  }
+  
+}
+@media all and (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 5rem;
+    flex-direction: column;
+    background-color: #fff;
+    width: 100%;
+    border-radius: 10rem;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow:
+      0 10rem 27rem rgba(0, 0, 0, 0.05);
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-item {
+    margin: 2.5rem 0;
+  }
+
+  .navbarMini {
+    display: block;
+    cursor: pointer;
+  }
+
 }
